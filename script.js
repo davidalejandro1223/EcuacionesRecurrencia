@@ -1,5 +1,6 @@
 function generarEntradas(){
-	let gradEcuacion = parseInt(document.getElementById("entradaGradEcu").value);
+
+	var gradEcuacion = parseInt(document.getElementById("entradaGradEcu").value);
 	const divCondIni = document.getElementById("condIniciales");
 	const divCoef = document.getElementById("coeficientes");
 	const divN = document.createElement("div");
@@ -46,4 +47,28 @@ function generarEntradas(){
 
 	btnSol.style.display = "inline-block";
 
+}
+
+function recibirDatos(){
+
+	var gradEcuacion = parseInt(document.getElementById("entradaGradEcu").value);
+	let arrFn = [];
+	let arrN = [];
+	let arrCoef = [];
+
+	for(let i=0; i<=gradEcuacion;i++){
+		let cadenaIdCoef = "coef-"+i;
+		let valCoef = parseInt(document.getElementById(cadenaIdCoef).value);
+		arrCoef[i]=valCoef;
+		console.log(arrCoef[i]);
+	}
+
+	for (let j = 0; j <gradEcuacion ; j++) {
+		let cadenaIdFn = "Fn-"+j;
+		let cadenaIdN = "N-"+j;
+		arrN[j] = parseInt(document.getElementById(cadenaIdN).value);
+		arrFn[j] = parseInt(document.getElementById(cadenaIdFn).value);
+		console.log(arrN[j]);
+		console.log(arrFn[j]);
+	}
 }
