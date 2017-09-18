@@ -62,11 +62,5 @@ function division(arr){
 			}						
 		}
 	}
-	alert(raices.join(", "));
-	return raices;
-}
-
-function prueba(){
-	var arr = [1,-5,8,-4];
-	division(arr);
+	return raices.map((raices)=>parseInt(raices));
 }
