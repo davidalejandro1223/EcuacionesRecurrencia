@@ -9,10 +9,9 @@ function gauss(matriz,numFilas,numColumnas){
 				matriz = reduccion(matriz,i,j,numColumnas,numFilas);	
 			}		
 		}
-		console.log(matriz.join(", "));		
 	}
 	for(z=0;z<numFilas;z++){
-		arr[z] = matriz[z][(numColumnas-1)];
+		arr[z] = matriz[z][(numColumnas)];
 	}
 	console.log(arr.join(", "));
 	return arr;	
@@ -30,7 +29,7 @@ function reduccion(matriz,fila,columna,numColumnas,numFilas){
 	if(fila == 0){
 		for(k = 1; k<numFilas; k++){
 			aux = matriz[k][j];
-			for(m = 0; m<numColumnas; m++){
+			for(m = 0; m<=numColumnas; m++){
 				if(aux>=0){
 					if(aux != 0){
 						matriz[k][m] = (matriz[fila][m]*(-aux)) + matriz[k][m];
@@ -45,7 +44,7 @@ function reduccion(matriz,fila,columna,numColumnas,numFilas){
 	}else if(fila == (numFilas-1)){
 		for(k = 0; k<(numFilas-1); k++){
 			aux = matriz[k][j];
-			for(m = 0; m<numColumnas; m++){
+			for(m = 0; m<=numColumnas; m++){
 				if(aux>=0){
 					if(aux != 0){
 						matriz[k][m] = (matriz[fila][m]*(-aux)) + matriz[k][m];
@@ -60,7 +59,7 @@ function reduccion(matriz,fila,columna,numColumnas,numFilas){
 	}else{
 		for(k = 0; k<numFilas; k++){
 			aux = matriz[k][j];
-			for(m = 0; m<numColumnas; m++){
+			for(m = 0; m<=numColumnas; m++){
 				if(k != fila){
 					if(aux>=0){
 						if(aux != 0){

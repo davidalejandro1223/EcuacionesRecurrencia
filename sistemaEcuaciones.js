@@ -1,7 +1,8 @@
-function armarEcuacion(raices, numRaices, arregloFn, arregloN) {
+function armarMatriz(raices, numRaices, arregloFn, arregloN) {
 	let numRep = raicesRepetidas(raices)[0];
 	let raicesRep = raicesRepetidas(raices)[1];
 	let matrizCoef = [arregloN.length - 1];
+	
 	for (let j = 0; j <= arregloN.length; j++) {
 		matrizCoef[j] = new Array(numRaices + 1);
 	}
@@ -19,8 +20,18 @@ function armarEcuacion(raices, numRaices, arregloFn, arregloN) {
 			console.log(matrizCoef[i][numRaices]);
 		}
 	}else{
-		
+		for(let i=0; i<arregloN.length; i++){
+			for(let j=0; j<numRep; j++){
+				matrizCoef[i][j] = Math.pow(arregloN[i], j)*Math.pow(raices[j], arregloN[i]);
+			}
+			for(let h = numRep; h<numRaices; h++){
+				matrizCoef[i][h]= Math.pow(raices[h], arregloN[i]);
+			}
+			matrizCoef[i][numRaices] = arregloFn[i];
+		}
 	}
+
+	return [matrizCoef,numRep];
 }
 
 function raicesRepetidas(raices) {

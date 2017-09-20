@@ -8,7 +8,7 @@ function recibirDatos() {
 		let cadenaIdCoef = "coef-" + i;
 		let valCoef = parseInt(document.getElementById(cadenaIdCoef).value);
 		arrCoef[i] = valCoef;
-		console.log(arrCoef[i]);
+		//console.log(arrCoef[i]);
 	}
 
 	for (let j = 0; j < gradEcuacion; j++) {
@@ -16,8 +16,8 @@ function recibirDatos() {
 		let cadenaIdN = "N-" + j;
 		arrN[j] = parseInt(document.getElementById(cadenaIdN).value);
 		arrFn[j] = parseInt(document.getElementById(cadenaIdFn).value);
-		console.log(arrN[j]);
-		console.log(arrFn[j]);
+		//console.log(arrN[j]);
+		//console.log(arrFn[j]);
 	}
 	solucion(arrCoef, arrFn, arrN, gradEcuacion)
 }
