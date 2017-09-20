@@ -48,3 +48,10 @@ function generarEntradas() {
 	btnSol.style.display = "inline-block";
 
 }
+
+function mostrarEcuacionPantalla(ecuacion){
+	const divSalida = document.getElementById("divSalida");
+	let pSalida = document.createElement("p");
+	pSalida.innerHTML = ecuacion;
+	divSalida.appendChild(pSalida);
+}

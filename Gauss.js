@@ -10,7 +10,7 @@ function gauss(matriz,numFilas,numColumnas){
 			}		
 		}
 	}
-	for(z=0;z<numFilas;z++){
+	for(z=0;z<(numFilas-1);z++){
 		arr[z] = matriz[z][(numColumnas)];
 	}
 	console.log(arr.join(", "));

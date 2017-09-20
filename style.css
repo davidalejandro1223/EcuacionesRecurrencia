@@ -33,6 +33,10 @@ body{
 	display: block;
 }
 
+#divSalida{
+	text-align: center;
+}
+
 input[id^="coef"]{
 	margin: .2em;
 }

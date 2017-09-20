@@ -43,7 +43,6 @@ function division(arr){
 	 	divisoresNeg[k] = divisores[k]*(-1);
 	}
 	divisores = divisores.concat(divisoresNeg);
-	alert(divisores.join(", "));
 	for(h = 0; h < divisores.length; h++){
 		for(g = 0; g < arr.length; g++){
 			resultado = (resultado+arr[cont3])*divisores[h];
