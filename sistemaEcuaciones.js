@@ -1,9 +1,12 @@
 function armarMatriz(raices, numRaices, arregloFn, arregloN) {
 	let numRep = raicesRepetidas(raices)[0];
 	let raicesRep = raicesRepetidas(raices)[1];
-	let matrizCoef = [arregloN.length - 1];
+	let matrizCoef = [arregloN.length];
+	let k;
+	let contRep;
+	let cont;
 
-	for (let j = 0; j <= arregloN.length; j++) {
+	for (let j = 0; j < arregloN.length; j++) {
 		matrizCoef[j] = new Array(numRaices + 1);
 	}
 
@@ -20,18 +23,31 @@ function armarMatriz(raices, numRaices, arregloFn, arregloN) {
 			console.log(matrizCoef[i][numRaices]);
 		}
 	} else {
-		for (let i = 0; i < arregloN.length; i++) {
-			for (let j = 0; j < numRep.length; j++) {
-				for (var k=0; k < numRep[j]; k++) {
-					if(j==0){
-						matrizCoef[i][k] = Math.pow(arregloN[i], k) * Math.pow(raices[k], arregloN[i]);
+		for (var i = 0; i < arregloN.length; i++) {
+			cont = 0;
+			contRep = 0;
+			k = 0;
+			for(var g=0; g<raices.length; g++){
+				if(raicesRep.indexOf(raices[g])==-1){
+					matrizCoef[i][g] = Math.pow(raices[g],arregloN[i]);
+				}else{
+					if(g==0){
+						for (k=g; k < numRep[cont]; k++) {
+							matrizCoef[i][k] = Math.pow(arregloN[i], contRep) * Math.pow(raices[k], arregloN[i]);
+							contRep++;
+							g=k;
+						}
 					}else{
-						matrizCoef[i][k+numRep[j-1]] = Math.pow(arregloN[i], k) * Math.pow(raices[k+numRep[j-1]], arregloN[i]);
-					}
+						let dist = numRep[cont]+g;
+						for (k=g; k < dist; k++) {
+							matrizCoef[i][k] = Math.pow(arregloN[i], contRep) * Math.pow(raices[k], arregloN[i]);
+							contRep++;
+							g=k;
+						}
+					}		
+					cont++;
+					contRep =0;				
 				}
-			}
-			for (let h = numRep; h < numRaices; h++) {
-				matrizCoef[i][h] = Math.pow(raices[h], arregloN[i]);
 			}
 			matrizCoef[i][numRaices] = arregloFn[i];
 		}
