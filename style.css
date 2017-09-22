@@ -1,6 +1,16 @@
 body{
 	font-size: 16px;
-	background: #336699;
+	background: #2F4858;
+}
+
+.container{
+	background: #86BBD8;
+	border-radius: 1.2em;
+	padding: 1em;
+}
+
+#entradaGradEcu{
+	width: 1.5em;
 }
 
 #gradoEcuacion{
@@ -27,6 +37,7 @@ body{
 
 #condIniciales *{
 	display: block;
+	text-align: center;
 }
 
 #coeficientes{
@@ -40,12 +51,17 @@ body{
 
 input[id^="coef"]{
 	margin: .2em;
+	width: 3em;
 }
 
 input[id^="N"]{
 	margin: .2em;
+	width: 3em;
+	display: inline-block;
 }
 
 input[id^="Fn"]{
 	margin: .2em;
+	width: 3em;
+	display: inline-block;
 }
