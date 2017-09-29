@@ -34,3 +34,13 @@ function armarEcuacion (coefC, raices, numRep){
 	}
 	return cadena;
 }
+
+function armarEcuacionCv(coefC,numRep,coefO){
+	var cadena = "La ecuancion en recurrencia con cambio de variable es: Fn = ";
+	numRep = numRep.length;
+	if(numRep == 0){
+		cadena = cadena + truncar(coefC[0]) + "*n^" + truncar(Math.log2(coefO[1])) + " + " + truncar(coefC[1]);	
+	}else{
+		cadena = cadena + truncar(coefC[0]) + " + " + truncar(coefC[1]) + "*" + "lg(n)";
+	}
+}
